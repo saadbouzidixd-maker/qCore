@@ -1,0 +1,42 @@
+# qCore — security configuration
+#
+# Nodes authenticate with HMAC-SHA256 using a per-node shared secret. The secret
+# must match the one in that node's server.yml / proxy.yml. Never commit real
+# secrets: use environment substitution and keep this file out of version
+# control.
+#
+#   secret: "${QCORE_SECRET_LOBBY_1}"
+#
+# API keys are for humans and tooling. Roles are read, write and admin.
+# Use a long random value, for example: openssl rand -hex 32
+
+security:
+  # Clock skew accepted on signed requests.
+  signature-tolerance: 60s
+
+  # Anonymous reads are disabled by default; the topology is sensitive.
+  allow-unauthenticated-reads: false
+
+  nodes:
+    - lobby-1
+    - lobby-2
+    - survival-1
+    - proxy-1
+
+  secrets:
+    lobby-1: "${QCORE_SECRET_LOBBY_1:change-me-lobby-1}"
+    lobby-2: "${QCORE_SECRET_LOBBY_2:change-me-lobby-2}"
+    survival-1: "${QCORE_SECRET_SURVIVAL_1:change-me-survival-1}"
+    proxy-1: "${QCORE_SECRET_PROXY_1:change-me-proxy-1}"
+
+  api-keys:
+    - dashboard
+    - operations
+
+  keys:
+    dashboard: "${QCORE_API_KEY_DASHBOARD:change-me-dashboard}"
+    operations: "${QCORE_API_KEY_OPERATIONS:change-me-operations}"
+
+  roles:
+    dashboard: read
+    operations: admin

@@ -1,0 +1,12 @@
+# qCore — proxy connection settings
+# By qSa3ed | qSa3ed Studio
+
+central:
+  url: "http://127.0.0.1:8080"
+  # Must match security.secrets.<proxy id> in central's security.yml.
+  # Prefer an environment variable: shared-secret: "${QCORE_SECRET_PROXY_1}"
+  shared-secret: "change-me-proxy-1"
+  timeout-seconds: 5
+
+heartbeat:
+  interval: 10s

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>studio.qsa3ed.qcore</groupId>
+        <artifactId>qcore-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>qcore-tests</artifactId>
+    <name>qCore :: Tests</name>
+    <description>Unit, integration and platform API surface tests for every qCore module</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>studio.qsa3ed.qcore</groupId>
+            <artifactId>qcore-central</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>studio.qsa3ed.qcore</groupId>
+            <artifactId>qcore-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>studio.qsa3ed.qcore</groupId>
+            <artifactId>qcore-storage</artifactId>
+        </dependency>
+        <!-- Plugin classes are inspected by the platform API surface test. -->
+        <dependency>
+            <groupId>studio.qsa3ed.qcore</groupId>
+            <artifactId>qcore-server</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>studio.qsa3ed.qcore</groupId>
+            <artifactId>qcore-velocity</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+
+        <!-- Compile-time API surface checks only; no server is started. -->
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.velocitypowered</groupId>
+            <artifactId>velocity-api</artifactId>
+            <version>${velocity.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

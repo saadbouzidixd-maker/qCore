@@ -1,0 +1,32 @@
+# Build output
+target/
+**/target/
+build/
+dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Logs and runtime data
+logs/
+*.log
+run/
+server/
+proxy/
+
+# Local configuration that may hold credentials
+config/
+**/config/*.local.yml
+secrets/
+*.secret
+.env
+.env.*
+
+# OS noise
+.DS_Store
+Thumbs.db

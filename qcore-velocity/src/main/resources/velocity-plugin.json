@@ -1,0 +1,11 @@
+{
+  "id": "qcore",
+  "name": "qCore",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "qCore network intelligence engine — proxy node",
+  "url": "https://qsa3ed.studio/qcore",
+  "authors": [
+    "qSa3ed"
+  ],
+  "main": "studio.qsa3ed.qcore.velocity.QCoreVelocityPlugin"
+}

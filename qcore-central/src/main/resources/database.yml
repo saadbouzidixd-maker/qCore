@@ -1,0 +1,18 @@
+# qCore — PostgreSQL configuration
+#
+# PostgreSQL is the source of truth for servers, players, events and audits.
+# Set enabled: false only for a throwaway environment: central then runs in
+# memory-only mode and reports storageAvailable=false.
+#
+# Prefer environment substitution over writing credentials into this file:
+#   password: "${QCORE_DB_PASSWORD}"
+
+database:
+  enabled: true
+  jdbc-url: "jdbc:postgresql://127.0.0.1:5432/qcore"
+  username: "qcore"
+  password: "${QCORE_DB_PASSWORD:}"
+  pool-size: 8
+  connection-timeout-ms: 5000
+  # Bound of the asynchronous work queue; operations fail fast when saturated.
+  queue-capacity: 512

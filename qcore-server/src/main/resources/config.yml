@@ -1,0 +1,21 @@
+# qCore — server node connection settings
+# By qSa3ed | qSa3ed Studio
+
+central:
+  # REST endpoint of the qCore central node.
+  url: "http://127.0.0.1:8080"
+  # Shared secret for this node. It must match security.secrets.<node id> in
+  # central's security.yml. Prefer an environment variable:
+  #   shared-secret: "${QCORE_SECRET_LOBBY_1}"
+  shared-secret: "change-me-lobby-1"
+  # Request timeout in seconds.
+  timeout-seconds: 5
+
+heartbeat:
+  # How often telemetry is reported. Central marks a node offline after its
+  # configured timeout, so keep this comfortably below that value.
+  interval: 5s
+
+telemetry:
+  # How often TPS/MSPT is sampled locally for commands.
+  sample-interval: 5s

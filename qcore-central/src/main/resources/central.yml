@@ -1,0 +1,45 @@
+# qCore — central node configuration
+# By qSa3ed | qSa3ed Studio
+
+network:
+  # Shown by /qcore info and by the REST health endpoint.
+  name: "qCore Network"
+
+rest:
+  # Bind to 127.0.0.1 when a reverse proxy terminates TLS in front of qCore.
+  # Use 0.0.0.0 only inside a trusted private network.
+  bind-address: "127.0.0.1"
+  port: 8080
+  # Bodies larger than this are rejected with HTTP 413.
+  max-request-bytes: 262144
+  worker-threads: 32
+  rate-limit:
+    # Per caller per minute. API keys count as their own caller.
+    requests-per-minute: 600
+
+heartbeat:
+  # A node that has not reported for this long is marked OFFLINE.
+  timeout: 30s
+  # How often central scans for expired heartbeats. Must not exceed timeout.
+  sweep-interval: 5s
+
+routing:
+  # Servers below this TPS are never selected.
+  minimum-tps: 15.0
+  # Servers above this player-capacity utilisation are not selected.
+  max-capacity-utilisation: 0.95
+  # When true, a DEGRADED server may be used if nothing healthy fits and the
+  # request allows a fallback. Off by default: never surprise an operator.
+  allow-degraded-fallback: false
+  # A server carrying any of these tags is never a routing destination.
+  excluded-tags:
+    - maintenance
+  max-candidates: 200
+
+intelligence:
+  # Master switch. When false, no automation rule is ever evaluated.
+  enabled: true
+  interval: 10s
+  # When true, matching rules are audited but no status is changed.
+  # Recommended while tuning thresholds.
+  dry-run: false

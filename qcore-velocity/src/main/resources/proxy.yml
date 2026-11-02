@@ -1,0 +1,25 @@
+# qCore — proxy identity and routing
+#
+# The proxy registers itself as a node so operators see it in /qcore status and
+# in the REST API. Routing requests are answered by central using recent server
+# telemetry; the proxy performs the actual transfer.
+
+proxy:
+  id: "proxy-1"
+  name: "qCore Proxy"
+  # Address this proxy reports; informational only.
+  host: "127.0.0.1"
+  port: 25577
+  weight: 10
+
+routing:
+  # Requests a destination in this group (matches server.yml game-mode or tags).
+  # Leave empty to accept any server.
+  group: ""
+  # Used when central returns no suitable destination or the transfer fails.
+  # Must be a server name configured in velocity.toml.
+  fallback-server: "lobby"
+  # When false, /qcore route only reports the decision and never transfers.
+  execute-transfers: true
+  # Abort a transfer if central has no recent information about the destination.
+  require-fresh-data: true

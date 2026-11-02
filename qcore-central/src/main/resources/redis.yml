@@ -1,0 +1,15 @@
+# qCore — Redis configuration
+#
+# Redis carries transient notifications (Pub/Sub) and the durable node stream.
+# It is never the source of truth: losing Redis degrades messaging, not data.
+
+redis:
+  enabled: true
+  uri: "redis://127.0.0.1:6379/0"
+  # Leave empty when the server requires no password, or use ${QCORE_REDIS_PASSWORD}.
+  password: "${QCORE_REDIS_PASSWORD:}"
+  # Every key qCore writes starts with this prefix.
+  key-prefix: "qcore:"
+  timeout-ms: 2000
+  # Approximate maximum stream length before Redis trims the oldest entries.
+  stream-max-length: 10000

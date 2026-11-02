@@ -1,0 +1,25 @@
+name: qCore
+version: "0.1.0-SNAPSHOT"
+main: studio.qsa3ed.qcore.server.QCoreServerPlugin
+api-version: "1.21"
+description: qCore network intelligence engine — server node (Paper, Purpur, Folia)
+author: qSa3ed
+website: https://qsa3ed.studio/qcore
+folia-supported: true
+
+commands:
+  qcore:
+    description: qCore server node administration
+    usage: /qcore <status|info|network|reload>
+    permission: qcore.command
+
+permissions:
+  qcore.command:
+    description: Access to /qcore
+    default: op
+  qcore.command.reload:
+    description: Reload the qCore node configuration
+    default: op
+  qcore.command.network:
+    description: View network-wide server state
+    default: op

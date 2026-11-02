@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qCore central logs.
+
+  Defaults are intentionally quiet: INFO for qCore, WARN for libraries that log
+  per-connection noise. Set QCORE_LOG_LEVEL=DEBUG for troubleshooting.
+-->
+<configuration>
+
+    <property name="LOG_LEVEL" value="${QCORE_LOG_LEVEL:-INFO}"/>
+    <property name="PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="studio.qsa3ed.qcore" level="${LOG_LEVEL}"/>
+    <logger name="io.lettuce" level="WARN"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+    <logger name="org.postgresql" level="WARN"/>
+    <logger name="com.sun.net.httpserver" level="WARN"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
