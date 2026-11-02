@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public final class CentralApplication {
 
     /** qCore version reported by the health endpoint. */
-    public static final String VERSION = "0.1.0-SNAPSHOT";
+    public static final String VERSION = "0.1.0";
 
     private static final Logger LOG = LoggerFactory.getLogger(CentralApplication.class);
 

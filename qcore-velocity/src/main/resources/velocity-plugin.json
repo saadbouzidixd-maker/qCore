@@ -1,7 +1,7 @@
 {
   "id": "qcore",
   "name": "qCore",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.0",
   "description": "qCore network intelligence engine — proxy node",
   "url": "https://qsa3ed.studio/qcore",
   "authors": [

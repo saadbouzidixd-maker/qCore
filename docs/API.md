@@ -1,6 +1,6 @@
 # qCore Developer API
 
-By qSa3ed | qSa3ed Studio · Version 0.1.0-SNAPSHOT
+By qSa3ed | qSa3ed Studio · Version 0.1.0
 
 Two integration surfaces exist:
 
@@ -68,7 +68,7 @@ All responses are `Cache-Control: no-store`.
 ```json
 {
   "network": "qCore Network",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.0",
   "uptimeMillis": 183421,
   "storageAvailable": true,
   "redisAvailable": true,
@@ -286,7 +286,7 @@ Add the dependency:
 <dependency>
   <groupId>studio.qsa3ed.qcore</groupId>
   <artifactId>qcore-api</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 

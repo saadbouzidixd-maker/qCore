@@ -6,7 +6,7 @@ qCore connects Minecraft servers into one coordinated infrastructure: a central
 coordinator that owns network state, gameplay servers that report their health,
 and a Velocity proxy that places players using that data.
 
-By **qSa3ed** | **qSa3ed Studio** | Version `0.1.0-SNAPSHOT` | MIT licensed
+By **qSa3ed** | **qSa3ed Studio** | Version `0.1.0` | MIT licensed
 
 | | |
 |---|---|
@@ -86,9 +86,9 @@ Artifacts:
 
 | Artifact | Path |
 |---|---|
-| Central | `qcore-central/target/qcore-central-0.1.0-SNAPSHOT.jar` |
-| Server plugin | `qcore-server/target/qCore-0.1.0-SNAPSHOT.jar` |
-| Velocity plugin | `qcore-velocity/target/qCore-Velocity-0.1.0-SNAPSHOT.jar` |
+| Central | `qcore-central/target/qcore-central-0.1.0.jar` |
+| Server plugin | `qcore-server/target/qCore-0.1.0.jar` |
+| Velocity plugin | `qcore-velocity/target/qCore-Velocity-0.1.0.jar` |
 
 ### 2. PostgreSQL and Redis
 
@@ -106,7 +106,7 @@ Schema migrations are applied automatically at central startup.
 mkdir config
 cp qcore-central/src/main/resources/{central,database,redis,security,rules}.yml config/
 export QCORE_DB_PASSWORD=change-this
-java -jar qcore-central/target/qcore-central-0.1.0-SNAPSHOT.jar --config-dir config
+java -jar qcore-central/target/qcore-central-0.1.0.jar --config-dir config
 ```
 
 Verify:

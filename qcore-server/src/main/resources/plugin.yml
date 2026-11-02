@@ -1,5 +1,5 @@
 name: qCore
-version: "0.1.0-SNAPSHOT"
+version: "0.1.0"
 main: studio.qsa3ed.qcore.server.QCoreServerPlugin
 api-version: "1.21"
 description: qCore network intelligence engine — server node (Paper, Purpur, Folia)

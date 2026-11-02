@@ -1,6 +1,6 @@
 # qCore — Development Status
 
-Version `0.1.0-SNAPSHOT` · By qSa3ed · qSa3ed Studio
+Version `0.1.0` · By qSa3ed · qSa3ed Studio
 
 This file is the single source of truth for what is implemented, what is
 partially implemented, and what is deferred. Nothing is listed as working unless
@@ -24,7 +24,7 @@ Legend:
 |---|---|---|
 | Maven parent + 7 modules | Implemented | `mvn clean verify` drives the whole reactor. |
 | Java 21 target | Implemented | Compiled with `--release 21` on a JDK 25 toolchain. |
-| Central executable jar (shaded) | Implemented | `qcore-central/target/qcore-central-0.1.0-SNAPSHOT.jar`. |
+| Central executable jar (shaded) | Implemented | `qcore-central/target/qcore-central-0.1.0.jar`. |
 | Server plugin jar (shaded) | Implemented | Paper API is `provided`, never bundled. |
 | Velocity plugin jar (shaded) | Implemented | Velocity API is `provided`, never bundled. |
 | Package root `studio.qsa3ed.qcore` | Implemented | Every module follows it. |
@@ -119,7 +119,7 @@ Legend:
 | Unit tests (`MessageProtocolTest` 9, `ConfigurationAndSecurityTest` 6, `RoutingCoordinatorTest` 7, `RuleEngineTest` 5, `HeartbeatAndPlayerSyncTest` 5) | **32 passed, 0 failed** |
 | `PlatformApiSurfaceTest` (Paper/Folia + Velocity API surface + descriptor targets) | **3 passed, 0 failed** |
 | Total tests in the default build | **35 run, 0 failures, 0 errors, 0 skipped** |
-| Artifacts produced | `qcore-central-0.1.0-SNAPSHOT.jar` (12.6 MB shaded), `qCore-0.1.0-SNAPSHOT.jar` (2.5 MB), `qCore-Velocity-0.1.0-SNAPSHOT.jar` (2.5 MB) |
+| Artifacts produced | `qcore-central-0.1.0.jar` (12.6 MB shaded), `qCore-0.1.0.jar` (2.5 MB), `qCore-Velocity-0.1.0.jar` (2.5 MB) |
 | Packaging inspection | `plugin.yml`, `velocity-plugin.json`, qCore classes and Jackson are bundled; `org/bukkit` and `com.velocitypowered` are **not** bundled (still `provided`) |
 
 ### 8.2 Central runtime smoke test (degraded mode, no PostgreSQL or Redis present)
@@ -142,7 +142,7 @@ authentication, registry cache, routing and event ring.
 | Unknown route | `404` |
 | 135 requests against a 120/min budget | 120 × `200`, 15 × `429` |
 | Startup with PostgreSQL unreachable (persistence enabled) | Exit 1 with `Unable to open the PostgreSQL connection pool at jdbc:postgresql://127.0.0.1:5432/qcore` — fail-fast, no hang |
-| `java -jar … --version` / `--help` | `qCore 0.1.0-SNAPSHOT` and usage text |
+| `java -jar … --version` / `--help` | `qCore 0.1.0` and usage text |
 
 ### 8.3 Not verified (no infrastructure available)
 

@@ -1,6 +1,6 @@
 # qCore Installation Guide
 
-By qSa3ed | qSa3ed Studio · Version 0.1.0-SNAPSHOT
+By qSa3ed | qSa3ed Studio · Version 0.1.0
 
 This guide installs a complete qCore network: PostgreSQL, Redis, one central
 node, one gameplay server and one Velocity proxy.
@@ -30,9 +30,9 @@ mvn clean verify
 
 | Artifact | Location |
 |---|---|
-| `qcore-central-0.1.0-SNAPSHOT.jar` | `qcore-central/target/` |
-| `qCore-0.1.0-SNAPSHOT.jar` (server plugin) | `qcore-server/target/` |
-| `qCore-Velocity-0.1.0-SNAPSHOT.jar` | `qcore-velocity/target/` |
+| `qcore-central-0.1.0.jar` | `qcore-central/target/` |
+| `qCore-0.1.0.jar` (server plugin) | `qcore-server/target/` |
+| `qCore-Velocity-0.1.0.jar` | `qcore-velocity/target/` |
 
 Keep these jars separate from the source tree when deploying; `target/` is build
 output and is not version controlled.
@@ -136,7 +136,7 @@ export QCORE_SECRET_SURVIVAL_1='...'
 export QCORE_SECRET_PROXY_1='...'
 export QCORE_API_KEY_DASHBOARD='...'
 
-java -jar qcore-central-0.1.0-SNAPSHOT.jar --config-dir /opt/qcore/config
+java -jar qcore-central-0.1.0.jar --config-dir /opt/qcore/config
 ```
 
 Expected log lines:
@@ -146,7 +146,7 @@ PostgreSQL pool ready: jdbc:postgresql://127.0.0.1:5432/qcore
 Database schema is up to date (1 migration(s) applied)
 Redis transport ready: redis://127.0.0.1:6379/0
 qCore REST API listening on http://127.0.0.1:8080/api/v1
-qCore 0.1.0-SNAPSHOT started — network 'qCore Network' — 0 server(s) registered
+qCore 0.1.0 started — network 'qCore Network' — 0 server(s) registered
 ```
 
 Check health:
@@ -161,7 +161,7 @@ curl -s http://127.0.0.1:8080/api/v1/health
 
 ## 6. Install a gameplay server node
 
-1. Copy `qCore-0.1.0-SNAPSHOT.jar` into the server's `plugins/` directory.
+1. Copy `qCore-0.1.0.jar` into the server's `plugins/` directory.
 2. Start Paper/Purpur/Folia once; qCore writes `plugins/qCore/config.yml` and
    `plugins/qCore/server.yml`.
 3. Edit `server.yml`:
@@ -208,7 +208,7 @@ under `GET /api/v1/servers`.
 
 ## 7. Install the Velocity proxy
 
-1. Copy `qCore-Velocity-0.1.0-SNAPSHOT.jar` into Velocity's `plugins/`.
+1. Copy `qCore-Velocity-0.1.0.jar` into Velocity's `plugins/`.
 2. Start Velocity once; `plugins/qcore/config.yml` and `proxy.yml` are created.
 3. Edit `proxy.yml`:
 
